@@ -100,11 +100,13 @@ data(data_normalized)
 # # plot_mva(mvaresults, color_by = "group")
 
 # OPLS-DA
-mvaresults <- mva(
-  data_normalized,
-  method = "OPLS-DA", group_col = "Diet", groups=c("HighFat", "Normal")
-)
-plot_mva(mvaresults, color_by = "group")
-plot_mva_loadings(mvaresults, color_by = "Class", top.n = 10)
-top_lipids(mvaresults, top.n = 10)
+for (i in 1:10) {
+  mvaresults <- mva(
+    data_normalized,
+    method = "OPLS-DA", group_col = "Diet", groups=c("HighFat", "Normal")
+  )
+  plot_mva(mvaresults, color_by = "group")
+  plot_mva_loadings(mvaresults, color_by = "Class", top.n = 10)
+  top_lipids(mvaresults, top.n = 10)  
+}
 }
