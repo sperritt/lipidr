@@ -88,23 +88,23 @@ to investigate feature importance.
 \examples{
 data(data_normalized)
 
-# PCA
-mvaresults <- mva(data_normalized, measure = "Area", method = "PCA")
+# # PCA
+# mvaresults <- mva(data_normalized, measure = "Area", method = "PCA")
+# plot_mva(mvaresults, color_by = "group")
+# # NOT RUN
+# # plot_mva(mvaresults, color_by = "Diet", components = c(2, 3))
+# 
+# # PCoA
+# mvaresults <- mva(data_normalized, measure = "Area", method = "PCoA")
+# # NOT RUN
+# # plot_mva(mvaresults, color_by = "group")
+
+# OPLS-DA
+mvaresults <- mva(
+  data_normalized,
+  method = "OPLS-DA", group_col = "Diet", groups=c("HighFat", "Normal")
+)
 plot_mva(mvaresults, color_by = "group")
-# NOT RUN
-# plot_mva(mvaresults, color_by = "Diet", components = c(2, 3))
-
-# PCoA
-mvaresults <- mva(data_normalized, measure = "Area", method = "PCoA")
-# NOT RUN
-# plot_mva(mvaresults, color_by = "group")
-
-# # OPLS-DA
-# mvaresults <- mva(
-#   data_normalized,
-#   method = "OPLS-DA", group_col = "Diet", groups=c("HighFat", "Normal")
-# )
-# plot_mva(mvaresults, color_by = "group")
-# plot_mva_loadings(mvaresults, color_by = "Class", top.n = 10)
-# top_lipids(mvaresults, top.n = 10)
-# }
+plot_mva_loadings(mvaresults, color_by = "Class", top.n = 10)
+top_lipids(mvaresults, top.n = 10)
+}
