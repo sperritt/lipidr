@@ -100,7 +100,7 @@ data(data_normalized)
 # # plot_mva(mvaresults, color_by = "group")
 
 # OPLS-DA
-for (i in 1:10) {
+for (i in 1:100) {
   mvaresults <- mva(
     data_normalized,
     method = "OPLS-DA", group_col = "Diet", groups=c("HighFat", "Normal")
