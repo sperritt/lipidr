@@ -105,8 +105,7 @@ for (i in 1:100) {
     data_normalized,
     method = "OPLS-DA", group_col = "Diet", groups=c("HighFat", "Normal")
   )
-  plot_mva(mvaresults, color_by = "group")
-  plot_mva_loadings(mvaresults, color_by = "Class", top.n = 10)
-  top_lipids(mvaresults, top.n = 10)  
+  top_lipids(mvaresults, top.n = 100)
+  plot_mva_loadings(mvaresults, color_by = "Class", top.n = 100)
 }
 }
